@@ -9,6 +9,9 @@ with open('books.json', 'r') as f:
 def save_books(data):
     with open('books.json', 'w') as f:
         json.dump(data, f, indent=4)
+@app.route('/')
+def index(name):
+    return 'Welcome to Books Store'
 @app.route('/<name>')
 def index(name):
     return 'Welcome {}'.format(name)
